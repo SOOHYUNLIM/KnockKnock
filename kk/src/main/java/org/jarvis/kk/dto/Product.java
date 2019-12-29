@@ -22,7 +22,7 @@ public class Product {
     private String category, title;
     
     @Column(length = 1000)
-    private String img, link;
+    private String image, link;
 
     private Integer price, fee;
 }

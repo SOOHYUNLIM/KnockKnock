@@ -6,15 +6,19 @@
 <link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
+<ul>
+    <li><span class="active" id="listBtn">전단지</span></li>
+    <li><span id="checkBtn">PICK</span></li>
+    <li><span id="interestBtn">설정</span></li>
+</ul>
+
 <div class="titleDiv content">
-    <h1 class="title">Knock Knock</h1>
-    <h3 class="date">2019.12.13 PM 3시 특가!</h3>
+    <h1 class="title"></h1>
+    <h3 class="date" style="font-size: 30px;"></h3>
 </div>
 
-<span class="date" id="setInterestBtn">관심사</span>
-<a href="http://localhost:8080/logout">logout</a>
-
-<div class="content">
+<span class="productPrice" id="test">로그아웃</span>
+<div id="main" class="content">
     <div class="leftContent" style="float: left;"></div>
     <div class="rightContent" style="float: right;"></div>
 </div>
@@ -43,10 +47,18 @@
     </div>
 </div>
 
-<script id="template" type="x-tmpl-mustache">
+
+<script id="pickTemplate" type="x-tmpl-mustache">
+    <span class="productTitle">{{title}}</span>
+    <span class="productPrice">{{price}} / {{fee}}</span>
+    <input class='wantedPrice date' style="font-size: auto;" type='text' placeholder='원하는 가격을 입력해주세요' required>
+    <button class="pickBtn">입력</button>
+</script>
+
+<script id="listTemplate" type="x-tmpl-mustache">
 <div class="container">
     <div style="display: flex">
-        <img class="productImg" src="{{img}}">
+        <img class="productImg" src="{{image}}">
         <div style="width: 100px">
             <a target="_blank" href="{{link}}" data-no="{{no}}" class="productTitle">{{title}}</a>
             <span class="productPrice">{{price}} / {{fee}}</span>

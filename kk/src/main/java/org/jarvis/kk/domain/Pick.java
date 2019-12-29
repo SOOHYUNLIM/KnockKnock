@@ -17,11 +17,13 @@ import org.jarvis.kk.dto.Product;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Pick
  */
 @Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "tbl_pick")
@@ -34,11 +36,16 @@ public class Pick extends BaseTimeEntity {
     @Embedded
     @AttributeOverride(name = "price", column = @Column(name="currentPrice"))
     private Product product;
-
+y
     private Integer wantedPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
+
+    private Boolean state;
+
+    @Column(columnDefinition = "BOOLEAN default 1")
+    private Boolean receipt;
 
     @Builder
     public Pick(Member member, Product product, Integer wantedPrice){

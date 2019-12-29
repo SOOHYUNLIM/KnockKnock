@@ -1,20 +1,38 @@
-package org.jarvis.kk.repositories;
+// package org.jarvis.kk.repositories;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+// import java.time.LocalDate;
+// import java.time.LocalDateTime;
+// import java.time.LocalTime;
 
-/**
- * CommunityCrawlingRepositoryTests
- */
-@SpringBootTest
-public class CommunityCrawlingRepositoryTests {
+// import org.junit.jupiter.api.Test;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-    @Autowired
-    private CommunityCrawlingRepository communityCrawlingRepository;
+// import lombok.extern.slf4j.Slf4j;
 
-    @Test
-    public void findPrevCrawling(){
-        // communityCrawlingRepository.findPrevCrawling();
-    }
-}
+// /**
+//  * CommunityCrawlingRepositoryTests
+//  */
+// @Slf4j
+// @SpringBootTest
+// public class CommunityCrawlingRepositoryTests {
+
+//     @Autowired
+//     private CommunityCrawlingRepository communityCrawlingRepository;
+
+//     @Test
+//     public void findByRegdateBetweenTest(){
+//         LocalDateTime from = LocalDateTime.of(LocalDate.now(), LocalTime.of(0, 0, 0));
+//         LocalDateTime to = from.plusDays(1L);
+//         // log.info(LocalDate.now().plusDays(1L).toString() );
+//         log.info("from=============="+from.toString());
+//         log.info("to=============="+to.toString());
+
+//         communityCrawlingRepository.findByRegdateBetweenOrderByNoDesc(from, to).forEach(action->log.info(action.getProduct().getTitle()));
+//     }
+    
+//     @Test
+//     public void findPrevCrawling(){
+//         // communityCrawlingRepository.findPrevCrawling();
+//     }
+// }

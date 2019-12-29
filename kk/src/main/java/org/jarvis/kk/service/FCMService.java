@@ -28,6 +28,8 @@ public final class FCMService {
     @PostConstruct
     public void init() {
         try {
+            //C:/Users/SH/FireBaseDB/serviceAccountKey.json
+            ///home/ec2-user/app/serviceAccountKey.json
             FileInputStream serviceAccount = new FileInputStream("C:/Users/SH/FireBaseDB/serviceAccountKey.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))

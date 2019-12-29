@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and().authorizeRequests()
         .antMatchers("/kk/msg", "/admin/**").permitAll()
         .anyRequest().authenticated()
-        .and().logout().logoutSuccessUrl("/")
+        .and().logout().logoutSuccessUrl("/").logoutUrl("/kk/logout").invalidateHttpSession(true).permitAll()
         .and().oauth2Login().successHandler(restAuthenticationLoginSuccessHandler).userInfoEndpoint().userService(oauth2MemberService);
     }
     

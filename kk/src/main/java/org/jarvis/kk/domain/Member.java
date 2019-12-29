@@ -13,6 +13,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.jarvis.kk.dto.BaseTimeEntity;
@@ -45,17 +46,13 @@ public class Member extends BaseTimeEntity {
     @Column(nullable = false)
     private Role role;
 
-    @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(name = "tbl_Token", joinColumns = @JoinColumn(name="mid"))
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mid")
     private List<Token> tokens;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "tbl_Interest", joinColumns = @JoinColumn(name="mid"))
     private List<Interest> interests;
-
-    @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(name = "tbl_Wanted", joinColumns = @JoinColumn(name="mid"))
-    private List<Wanted> wanteds;
 
     public Member update(String sex, String ageGroup){
         this.sex = sex;
@@ -71,10 +68,8 @@ public class Member extends BaseTimeEntity {
         return this;
     }
 
-    public Member setToeknList(String... tokens){
-        List<Token> list = new ArrayList<>();
-        Arrays.stream(tokens).forEach(token->list.add(new Token(token)));
-        this.tokens = list;
+    public Member setTest(List<Interest> interests) {
+        this.interests = interests;
         return this;
     }
 }

@@ -79,7 +79,9 @@ public class OAuth2Attributes {
     }
 
     public Member toEntity(){
-        return Member.builder().mid(mid).role(Role.MEMBER).build();
+        return Member.builder().mid(mid)
+        // .sex(sex).ageGroup(ageGroup)
+        .role(Role.MEMBER).build();
     }
     
 }

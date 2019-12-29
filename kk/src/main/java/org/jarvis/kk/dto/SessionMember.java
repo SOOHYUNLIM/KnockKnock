@@ -1,27 +1,29 @@
 package org.jarvis.kk.dto;
 
 import java.io.Serializable;
-import java.util.List;
 
-import org.jarvis.kk.domain.Interest;
 import org.jarvis.kk.domain.Member;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * SessionMember
  */
 @Getter
+@Slf4j
 public class SessionMember implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-    private String mid;
+    private final String mid;
 
-    private List<Interest> interests;
+    // private final boolean existInterest;
 
     public SessionMember(Member member){
         this.mid = member.getMid();
-        this.interests = member.getInterests();
+        // log.info(member.getInterests().size()+"");
+        // member.getInterests().forEach(action->log.info(action.getKeyword()));
+        // this.existInterest = member.getInterests() == null ? false : true;
     }
 }

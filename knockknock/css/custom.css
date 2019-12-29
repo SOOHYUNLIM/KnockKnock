@@ -72,13 +72,9 @@ a:hover {
     }
 }
 
-
 .title {
     font-size: 70px;
     display: block;
-}
-
-.title {
     animation: title 2s linear infinite;
     -moz-animation: title 2s linear infinite;
     -webkit-animation: title 2s linear infinite;
@@ -98,12 +94,8 @@ a:hover {
 }
 
 .date {
-    font-size: 30px;
     display: block;
     margin-bottom: 20px;
-}
-
-.date {
     animation: date 2s linear infinite;
     -moz-animation: date 2s linear infinite;
     -webkit-animation: date 2s linear infinite;
@@ -157,4 +149,58 @@ a:hover {
 .socialLogin {
     width: 80%;
     height: auto;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    width: 33.3%;
+    float: left;
+}
+
+li span {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #333;
+}
+
+li span:hover:not(.active) {
+    cursor: pointer;
+    background-color: #111;
+}
+
+.active {
+    background-color: rgba( 255, 255, 255, 0 );
+}
+
+.wantedPrice {
+    border: 0 none;
+    background: none;
+    color: snow;
+    border-bottom: 1px solid snow;
+    height: 29px;
+    line-height: 29px;
+    width: 40vw;
+    margin-bottom: 10px;
+}
+
+.pickBtn {
+    border: 0 none;
+    background: none;
+    color: snow;
+    border: 2px solid snow;
+    width: 40vw;
+    height: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0;
 }
